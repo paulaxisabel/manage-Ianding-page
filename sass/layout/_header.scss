@@ -1,0 +1,98 @@
+.header {
+  padding: 4rem $padding-side;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &__checkbox,
+  &__nav-toggle {
+    display: none;
+  }
+
+  &__nav-item {
+    color: $color-dark;
+    font-size: 1.55rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-grey-dark;
+    }
+
+    &:not(:last-child) {
+      margin-right: 3.5rem;
+    }
+  }
+
+  ///// SMALL SCREENS
+
+  @include respond(tablet) {
+    &__nav-toggle {
+      display: block;
+    }
+
+    &__navigation {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($color-pale-red, 0.5),
+        rgba($color-dark, 0.6)
+      );
+      z-index: -1;
+      transition: all 0.4s ease-out;
+    }
+
+    &__checkbox:checked ~ &__navigation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__nav-list {
+      visibility: hidden;
+      position: absolute;
+      top: 11rem;
+      left: $padding-side;
+      right: $padding-side;
+      background-color: $color-white;
+      padding: 3.5rem 0;
+      text-align: center;
+      max-width: 40rem;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(80%);
+      transition: all 0.6s ease-out;
+    }
+
+    &__checkbox:checked ~ &__navigation &__nav-list {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__nav-item {
+      display: block;
+      font-size: 1.8rem;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .btn {
+      display: none;
+    }
+  }
+
+  @include respond(mobile) {
+    height: 11rem;
+  }
+}

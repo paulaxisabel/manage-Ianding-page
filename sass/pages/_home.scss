@@ -1,0 +1,248 @@
+///// MAIN CONTAINER
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+///// INTRO SECTION
+
+.intro {
+  padding: 2rem $padding-side;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond(tablet) {
+    flex-direction: column;
+    text-align: center;
+    max-width: 65rem;
+    margin: auto;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    transform: translate(17%, -16%);
+    width: 56%;
+
+    @include respond(tablet) {
+      width: 90%;
+    }
+
+    @include respond(mobile) {
+      width: 110%;
+      transform: translate(25%, -16%);
+    }
+  }
+
+  &__img {
+    width: 55%;
+    margin-right: -1.9rem;
+    animation: slideLeft 0.6s ease-out;
+
+    @include respond(tablet) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    width: 40%;
+    margin-top: -3rem;
+
+    @include respond(tablet) {
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+
+    & > * {
+      animation: slideUp 0.7s ease-out;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  &__heading {
+    animation-delay: 0.3s;
+  }
+
+  &__text {
+    width: 85%;
+    margin-bottom: 4rem;
+    animation-delay: 0.7s;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    animation: slideUpBtn 0.6s ease-in 1s;
+    animation-fill-mode: backwards;
+  }
+}
+
+///// FEATURES SECTION
+
+.features {
+  padding: 10rem $padding-side;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  @include respond(tablet) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 7rem;
+    width: 100%;
+    flex-direction: column;
+    position: initial;
+  }
+
+  &__intro {
+    width: 40%;
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 55rem;
+      margin: auto;
+      text-align: center;
+      padding: 0 $padding-side-mobile;
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  &__intro-text {
+    width: 80%;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    width: 50%;
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 55rem;
+      margin: auto;
+    }
+
+    & > * {
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    width: 90vw;
+    height: 90vh;
+    top: 49%;
+    left: 0;
+    overflow: hidden;
+
+    img {
+      transform: translateX(-59%);
+    }
+
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+
+  &__bg-mobile {
+    display: none;
+
+    @include respond(tablet) {
+      display: block;
+      position: absolute;
+      width: 80%;
+      max-width: 68rem;
+      right: 0;
+      top: 20%;
+      z-index: -1;
+      transform: translateX(55%);
+    }
+  }
+}
+
+///// TESTIMONIALS SECTION
+.testimonials {
+  padding-bottom: 15rem;
+
+  @include respond(tablet) {
+    padding: 0 $padding-side-mobile 12rem;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 6.5rem;
+  }
+
+  &__btn-wrapper {
+    text-align: center;
+    margin-top: 6.5rem;
+  }
+}
+
+
+///// CTA SECTION
+.cta {
+  position: relative;
+  background-color: $color-primary-red;
+  overflow: hidden;
+
+  &__content {
+    padding: 7rem $padding-side;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include respond(tablet) {
+      padding: 7rem 0;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    width: 40%;
+    color: $color-white;
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 50rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 20%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg-simplify-section-desktop.svg);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    @include respond(tablet) {
+      left: 0;
+      top: 15%;
+      right: initial;
+      width: 8rem;
+      height: 80%;
+      background-image: url(../images/bg-simplify-section-mobile.svg);
+      background-position: top;
+    }
+  }
+}

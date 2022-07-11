@@ -1,0 +1,48 @@
+.feature {
+  $num-width: 7rem;
+  $num-gutter: 3rem;
+  
+  &__top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include respond(tablet) {
+      background-color: $color-pale-red;
+      margin-left: $padding-side-mobile;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+      padding-right: 2rem;
+
+      @media only screen and (min-width: 450px) {
+        margin-right: $padding-side-mobile;
+      }
+    }
+  }
+
+  &__number {
+    background-color: $color-primary-red;
+    color: $color-white;
+    font-size: 1.7rem;
+    font-weight: 500;
+    border-radius: 100px;
+    width: $num-width;
+    padding: .7rem 0;
+    text-align: center;
+    margin-right: $num-gutter;
+
+    @include respond(tablet) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__text {
+    margin-top: 1.5rem;
+    margin-left: calc(#{$num-width} + #{$num-gutter});
+
+    @include respond(tablet) {
+      margin-left: 0;
+      padding: 0 $padding-side-mobile;
+    }
+  }
+}

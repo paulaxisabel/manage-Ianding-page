@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @include respond(mobile) {
+    font-size: 50%; //1rem = 8px
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+header,
+section:not(.features),
+footer {
+  @include respond(mobile) {
+    padding-left: $padding-side-mobile !important;
+    padding-right: $padding-side-mobile !important;
+  }
+}
+
+::selection {
+  background-color: $color-primary-red;
+  color: #fff;
+}

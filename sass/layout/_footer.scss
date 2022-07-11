@@ -1,0 +1,185 @@
+.footer {
+  display: flex;
+  background-color: $color-dark;
+  color: $color-white;
+  font-size: 1.55rem;
+  padding: 6rem $padding-side;
+  position: relative;
+
+  @include respond(tablet-land) {
+    flex-direction: column-reverse;
+    padding-bottom: 10rem; // Adding bottom padding on smaller devices to make space for the copyright text
+  }
+
+  @include respond(mobile) {
+    font-size: 1.7rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tablet-land) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__social-row {
+    margin-top: 10rem;
+
+    @include respond(tablet-land) {
+      margin: 5rem auto 7rem;
+      width: 95vw;
+      max-width: 35rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__social-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 2.5rem;
+
+    @include respond(tablet-land) {
+      font-size: 3.5rem;
+    }
+
+    &:hover {
+      color: $color-primary-red;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__navigation {
+    flex: 1;
+    margin-left: 12%;
+    display: flex;
+
+    @include respond(tablet-land) {
+      justify-content: center;
+      margin-left: 0;
+    }
+  }
+
+  &__nav-column {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      margin-right: 32%;
+
+      @include respond(tablet-land) {
+        margin-right: 15rem;
+      }
+    }
+  }
+
+  &__nav-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-red;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  &__right {
+    text-align: right;
+
+    @include respond(tablet-land) {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6.5rem;
+    position: relative;
+
+    @include respond(tablet-land) {
+      justify-content: center;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -25px;
+      left: 2rem;
+      font-size: 1.4rem;
+      font-style: italic;
+
+      @include respond(tablet-land) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.error::after {
+      content: "Please insert a valid email";
+      color: $color-primary-red;
+    }
+
+    &.success::after {
+      content: "Thank you for signing up!";
+      color: $color-white;
+    }
+  }
+
+  &__input {
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+    padding: 0 2rem;
+    border: 1px solid transparent;
+    width: 25rem;
+    font-size: inherit;
+    font-family: inherit;
+    color: $color-primary-red;
+
+    @include respond(tablet-land) {
+      width: 100%;
+      max-width: 30rem;
+    }
+
+    &:focus {
+      border: 1px solid $color-primary-red;
+    }
+  }
+
+  ::placeholder {
+    font-size: 1.6rem;
+    font-family: "Be Vietnam", sans-serif;
+    color: $color-grey-dark;
+  }
+
+  &__btn {
+    box-shadow: none;
+
+    &:hover {
+      opacity: 0.9 !important;
+      filter: brightness(160%);
+    }
+  }
+
+  &__copyright {
+    color: $color-grey-dark;
+
+    @include respond(tablet-land) {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
+}

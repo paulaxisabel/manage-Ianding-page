@@ -1,0 +1,42 @@
+.btn {
+  text-decoration: none;
+  font-size: 1.55rem;
+  font-weight: 700;
+  padding: 1.2rem 3.5rem;
+  border-radius: 100px;
+  box-shadow: rgba($color-primary-red, 0.4) 0px 6px 9px 0px;
+
+  // for the <button> element
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: inherit;
+
+  &, & > span {
+    transition: all .5s;
+  }
+
+  &--red {
+    background: $color-primary-red;
+    color: $color-white;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &--white {
+    background: $color-white;
+    color: $color-primary-red;
+
+    &:hover {
+      span {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &--small {
+    padding: 1.2rem 2.5rem;
+  }
+}
